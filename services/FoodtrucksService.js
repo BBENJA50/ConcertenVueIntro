@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const apiClient = axios.create({
-    baseURL:"https://my-json-server.typicode.com/BBENJA50/fake/concerten",
+    baseURL:"https://my-json-server.typicode.com/BBENJA50/fake/foodtrucks",
     withCredentials: false,
     headers:{
         Accept:"application/json",
@@ -9,10 +9,10 @@ const apiClient = axios.create({
     }
 })
 export default{
-    getConcerten(){
+    getFoodtrucks(){
         return apiClient.get("/")
     },
-    getConcert(id){
+    getFoodtruck(id){
         return apiClient.get("/"+id)
     }
 }

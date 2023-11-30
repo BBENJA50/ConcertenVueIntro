@@ -7,7 +7,7 @@
   onMounted(()=>{
     ConcertenService.getConcerten()
         .then((response)=>{
-          concerten.value = response.data.concerten
+          concerten.value = response.data
         }).catch((error)=>{
           console.log(error)
     })
@@ -16,8 +16,8 @@
 </script>
 
 <template>
-  <div class="home">
-    <div id="wrapper" class="d-flex justify-content-evenly my-2">
+  <div class="home mx-5 ">
+    <div id="wrapper" class="d-flex justify-content-center flex-wrap my-2">
       <ConcertCard v-for="concert in concerten" :key="concert.id" :concert="concert" />
     </div>
   </div>
