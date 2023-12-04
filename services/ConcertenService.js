@@ -9,10 +9,16 @@ const apiClient = axios.create({
     }
 })
 export default{
-    getConcerten(){
-        return apiClient.get("/")
+    getAllConcerten(){
+        return apiClient("/")
+    },
+    getConcerten(perPage, page){
+        return apiClient.get("/?_limit=" + perPage + "&_page=" + page)
     },
     getConcert(id){
         return apiClient.get("/"+id)
+    },
+    getConcertByTitle(title){
+        return apiClient("/")
     }
 }
